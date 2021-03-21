@@ -11,12 +11,9 @@ var CarsSchema = new Schema({
         default: Date.now
     },
     status: {
-        type: [{
-            type: String,
-            enum: ['new','used','crushed']
-        }],
-        default: ['new']
-    }
+        type: String,
+        default: 'new'
+    },
 });
 
 module.exports = mongoose.model('Cars', CarsSchema);

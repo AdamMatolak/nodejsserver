@@ -16,7 +16,7 @@ exports.add_new_car = function(req, res){
         if(err){
             res.send(err);
         }
-        res.json(car);
+        res.json({message: 'Car successfully added' });
     });
 };
 
@@ -30,7 +30,7 @@ exports.read_a_car = function(req, res){
 };
 
 exports.update_a_car = function(req, res){
-    Car.findByIdAndUpdate({_id: req.params.taskId}, req.body, {new: true}, function(err, car){
+    Car.findByIdAndUpdate({_id: req.params.carId}, req.body, {new: true}, function(err, car){
         if(err){
             res.send(err);
         }
@@ -40,7 +40,7 @@ exports.update_a_car = function(req, res){
 
 exports.delete_a_car = function(req, res){
     Car.remove({
-        _id: req.params.taskId
+        _id: req.params.carId
     }, function(err, car){
         if(err){
             res.send(err);
