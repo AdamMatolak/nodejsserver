@@ -16,7 +16,7 @@ routes(app); //registrácia ciest
 
 app.listen(port);
 
-console.log('owned cars list Rest API server started on port: ' +port);
+console.log('=>>> Owned cars list Rest API server started on port: ' +port);
 
 app.use(function(req, res) {
     res.status(404).send({url: req.originalUrl + ' not found'})
